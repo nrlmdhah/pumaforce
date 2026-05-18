@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | PUMA FORCE SDN. BHD.</title>
+  <link rel="icon" href="logopumaf.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    nav {
+      background-color: #0c1f3f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.8rem 2rem;
+      position: relative;
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-center a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #ffaa00;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .main-logo img {
+      height: 100px;
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0c1f3f;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #0c1f3f;
+      text-align: center;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .section-content {
+      text-align: center;
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 3rem 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 1rem;
+    }
+
+   .carousel-controls button {
+  background: linear-gradient(135deg, #0c1f3f, #1e3a8a);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-controls button:hover {
+  background: #ffaa00;
+  color: #0c1f3f;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1.5rem;
+  pointer-events: none; /* prevents blocking image clicks */
+}
+
+.carousel-controls button {
+  pointer-events: all; /* allow clicks */
+}
+
+
+    .video-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .video-section h3 {
+      font-size: 1.8rem;
+      color: #0c1f3f;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-section iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background-color: #0c1f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-center {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .carousel img {
+        height: 250px;
+      }
+
+      .video-section iframe {
+        height: 250px;
+      }
+
+      .intro h2 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .intro p, .section-content {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="logopumaf.png" alt="Pumaforce Logo" />
+        <img src="PumaName.png" alt="Pumaforce name" />
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="main-logo">
+      <img src="logopumaf.png" alt="Pumaforce Company Logo" />
+    </div>
+
+    <section class="intro">
+      <h2>About PUMA FORCE SDN. BHD.</h2>
+      <p>
+        Since 2000, <strong>PUMA FORCE SDN. BHD.</strong> has delivered premium security solutions across Malaysia. 
+        We are dedicated to safeguarding people, assets, and communities through integrity, professionalism, and innovation.
+      </p>
+    </section>
+
+    <section class="carousel" aria-label="Company visuals">
+      <img src="https://jkssecurity.com.my/wp-content/uploads/2023/05/MAT03115-scaled.jpg" class="active" alt="Patrolling guard" />
+      <img src="https://jkssecurity.com.my/wp-content/uploads/2023/05/MAT02830-2-1024x683.jpg" alt="Surveillance technology" />
+      <img src="https://th.bing.com/th/id/R.1b4c1365d3f8da43afb50667c74c6288?rik=Ob9trFjNccxmsA&pid=ImgRaw&r=0" alt="Monitoring room" />
+      <img src="PG.png" alt="Professional guard" />
+      <div class="carousel-controls">
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">Our Mission</h3>
+      <p class="section-content">
+        To provide reliable, responsive, and advanced security services tailored to the needs of our clients — ensuring peace of mind through proactive protection.
+      </p>
+
+      <h3 class="section-title">Our Values</h3>
+      <p class="section-content">
+        We are guided by our core values of honesty, vigilance, responsibility, and respect. These values shape our actions and relationships with clients, staff, and the community.
+      </p>
+
+      <h3 class="section-title">Leadership & Experience</h3>
+      <p class="section-content">
+        Our management team consists of former military and law enforcement professionals, blending tactical expertise with civilian safety protocols. 
+        With over two decades of experience, we bring strategic insight to every security challenge.
+      </p>
+    </section>
+
+    <section class="video-section">
+      <h3>Watch Our Security Services in Action</h3>
+      <iframe src="https://www.youtube.com/embed/_N965cfk8MA" title="Pumaforce Security Video" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Puma Force  Sdn Bhd. All rights reserved.
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  </script>
+</body>
+</html>

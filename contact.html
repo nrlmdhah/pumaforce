@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | PUMA FORCE SDN. BHD.</title>
+  <link rel="icon" href="logopumaf.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    nav {
+      background-color: #0c1f3f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.8rem 2rem;
+      position: relative;
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-center a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #ffaa00;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    .contact {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #0c1f3f;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .contact p a {
+      color: #0c1f3f;
+      text-decoration: none;
+    }
+
+    .contact p a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    .contact-form .form-group {
+      flex: 1 1 400px;
+    }
+
+    .contact-form button {
+      background-color: #0c1f3f;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 3rem;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      background-color: #0c1f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-center {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .contact-form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="logopumaf.png" alt="Pumaforce Logo" />
+        <img src="PumaName.png" alt="Pumaforce name" />
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Contact Info + Form -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      📍 204, Jalan Metro Sendayan 2/3, Sendayan Metro Park, Bandar Sri Sendayan, 71950 Seremban, Negeri Sembilan, Malaysia<br>
+      📞 067677011<br>
+      📧 <a href="mailto:puma.hq@pumaforce.com">puma.hq@pumaforce.com</a>
+    </p>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group" style="flex-basis: 100%;">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="form-group" style="text-align: center; flex-basis: 100%;">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+
+    <!-- OpenStreetMap -->
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Puma Force Sdn Bhd. All rights reserved.
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <script>
+    // Initialize Leaflet map
+    var map = L.map('map').setView([2.6938, 101.8309], 16);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marker
+    L.marker([2.6938, 101.8309]).addTo(map)
+      .bindPopup('Pumaforce Security Services<br>204, Jalan Metro Sendayan 2/3')
+      .openPopup();
+  </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | PUMA FORCE SDN. BHD.</title>
+  <link rel="icon" href="logopumaf.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    nav {
+      background-color: #0a1c33;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-center a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #ffaa00;
+    }
+
+    header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://www.pngitem.com/pimgs/m/176-1768314_security-service-guard-white-uniform-malaysia-hd-png.png') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.4rem;
+  max-width: 750px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+    .cta-button {
+      display: inline-block;
+      background-color: #ffaa00;
+      color: #0a1c33;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e69a00;
+    }
+
+    .intro-section {
+      max-width: 1000px;
+      margin: 3rem auto 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .intro-section h2 {
+      font-size: 2.2rem;
+      color: #0a1c33;
+      margin-bottom: 1rem;
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    section.features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      flex: 1 1 300px;
+      max-width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .feature-card i {
+      font-size: 2.4rem;
+      color: #0a1c33;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: #0a1c33;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .feature-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .gallery-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #0a1c33;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background-color: #0a1c33;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-center {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .cta-button {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="logopumaf.png" alt="Pumaforce Logo" />
+      <img src="PumaName.png" alt="Pumaforce name" />
+    </a>
+  </div>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>PUMA FORCE SDN. BHD. 202301000394 (1494313-W)</h1>
+  <p>Your Trusted Partner in Professional Security — Guarding Malaysia With Excellence Since 2000</p>
+  <a href="services.html" class="cta-button">Discover Our Services</a>
+</header>
+
+<section class="intro-section">
+  <h2>Professional Security, Tailored to You</h2>
+  <p>
+    At Puma Force, we understand that every client’s needs are unique. That’s why we offer adaptable, reliable, and certified security solutions that meet the highest industry standards. 
+    Whether you're a business, government agency, or private property owner — we’re committed to protecting what matters most.
+  </p>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <i class="fas fa-id-badge"></i>
+    <h3>Certified & Compliant</h3>
+    <p>Recognized by Malaysian law enforcement and licensed under the Ministry of Home Affairs.</p>
+  </div>
+  <div class="feature-card">
+    <i class="fas fa-users-shield"></i>
+    <h3>Trained Experts</h3>
+    <p>Our guards undergo regular professional training to ensure situational readiness and discipline.</p>
+  </div>
+  <div class="feature-card">
+    <i class="fas fa-bolt"></i>
+    <h3>Rapid Response 24/7</h3>
+    <p>Always active, always alert — we respond immediately to any incident or emergency, day or night.</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2>Our Field Operations</h2>
+  <div class="gallery">
+    <img src="https://th.bing.com/th/id/R.7a45b83f8aaa2881d578381d2df2a87b?rik=X41G%2bSukrfeL9w&riu=http%3a%2f%2fwww.mahmoodsecurity.com%2fimages%2funarmed-guard.jpg&ehk=3bQaGYvqRqwtPcRcwD2DOl6rTctUrhM1Pl7QNJwxbFI%3d&risl=&pid=ImgRaw&r=0" alt="Security Patrol">
+    <img src="https://i.pinimg.com/originals/e6/d2/8d/e6d28d738b0dbc7fd292304b688b9e8d.jpg" alt="Surveillance Room">
+    <img src="https://th.bing.com/th/id/R.cfe6dc9fe45fbdf0eecc686ff027a46d?rik=wJSckFFmIbvoPg&riu=http%3a%2f%2fwww.wirasecurity.com%2fimages%2fk9.jpg&ehk=kOt4Mu5NUWe%2fPHBj4CYVzIGmPUfzQzuqeo%2fr5TUOu4I%3d&risl=&pid=ImgRaw&r=0" alt="K9 Unit">
+    <img src="patrolcar.png" alt="Guard Vehicle">
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Puma Force Security Services Sdn Bhd. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+
+
